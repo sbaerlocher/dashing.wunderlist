@@ -1,0 +1,11 @@
+<h1 class="title" data-bind="title"></h1>
+
+<ul class="list-nostyle">
+  <li data-foreach-task="tasks">
+    <span class="label" data-bind="task.title"></span>
+    <p class="subtask" data-bind="task.subtasks"></p>
+  </li>
+</ul>
+
+<p class="more-info" data-bind="moreinfo"></p>
+<p class="updated-at" data-bind="updatedAtMessage"></p>
