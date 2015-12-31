@@ -1,6 +1,6 @@
 require 'rest-client'
-wunderlisttoken = '004807d1a40270dc0b6e89358a736a4ca1b0a5df4f6adc9d2417b4aee27b'
-wunderlistclient = '9f172c2529ef75701da9'
+wunderlisttoken = ''
+wunderlistclient = ''
 
 # :first_in sets how long it takes before the job is first run. In this case, it is run immediately
 SCHEDULER.every '5m', :first_in => 0 do |job|
