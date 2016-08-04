@@ -26,14 +26,19 @@ To include the widget in a dashboard, add the following snippet to the dashboard
 
 ## Changelog
 
-### 1.0
+### 1.2
 
-* Initial release
+* add function show all tasks
+* add function to a specific list Select
 
 ### 1.1
 
 * fix bug in wunderlist.rb
  
+### 1.0
+
+* Initial release
+
 ## Contributor
 
 * [Simon Bärlocher](https://sbaerlocher.ch)
