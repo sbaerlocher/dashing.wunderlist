@@ -6,7 +6,8 @@ wunderlistclient = ''
 # today: all open task today
 # is empty, show all tasks
 type = ''
-listid = ''
+includelist = ''
+excludelist = ''
 
 # :first_in sets how long it takes before the job is first run. In this case, it is run immediately
 SCHEDULER.every '5m', :first_in => 0 do |job|
@@ -22,13 +23,13 @@ SCHEDULER.every '5m', :first_in => 0 do |job|
       case type
       when "today"
         date =  DateTime.now
-        next if task['due_date'] == nil or task['due_date'] > date.strftime("%Y-%m-%d")   
+        next if task['due_date'] == nil or task['due_date'] > date.strftime("%Y-%m-%d") or task['list_id'].to_i == excludelist.to_i
       when "list"
-        if listid.size == 0
-          puts 'Warning! Please define a listid'
+        if includelist.size == 0
+          puts 'Warning! Please define a includelist'
           break
-        end          
-        next if not task['list_id'].to_i == listid.to_i
+        end    
+        next if task['list_id'].to_i != includelist.to_i
       end
 
       subtitle = []
